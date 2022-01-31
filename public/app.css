@@ -1,0 +1,16 @@
+body {
+    background-image:url(img.jpg);
+}
+
+h1, h2, h3, label, li, p {
+    color: rgba(255, 255, 255, 0.678);
+}
+
+.form-control {
+    background-color: rgb(211, 204, 204);
+}
+
+.btn {
+    color:rgba(255, 255, 255, 0.678);
+}
+

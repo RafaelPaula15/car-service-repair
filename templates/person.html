@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Customer{% endblock %}
+{% block content %}
+
+ <h1>one customer </h1>
+
+ <ul style="column-count: 1">
+    {% for service in services %}
+    <li>{{ service.date_time }} {{service.services_needed}}</a></li>
+    {% endfor %}
+  </ul>
+
+  <!-- <h2>Appointments</h2>
+  {% if services %}
+  <ul>
+    {% for service in services %}
+    <li><b>{{ service.formattedDateTime }}</b> for {{ service.services_needed }}</li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>None!</p>
+  {% endif %} -->
+
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}{{ customer.fullName }}{% endblock %}
+
+
+{% block content %}
+
+<h1>{{ customer.fullName }}</h1>
+
+
+<div class="row">
+
+  <div class="col-6">
+
+    <p><b>Phone: </b> {{ customer.phone }}</p>
+    <p><b>Car Model: </b> {{ customer.car_model }}</p>
+    <p><b>License Plate: </b> {{ customer.license_plate }}</p>
+    <p><b>Notes: </b>{{ customer.notes }}</p>
+
+    <p><a class="btn btn-primary" href="/{{ customer.id }}/edit/">Edit</a></p>
+
+    <h2>Appointments</h2>
+    {% if services %}
+    <ul>
+      {% for service in services %}
+      <li><b>{{ service.formattedDateTime }}</b> for {{ service.services_needed }}</li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>None!</p>
+    {% endif %}
+
+  </div>
+
+  <div class="col-6">
+    <h3>New Appointment</h3>
+    <form action="/{{ customer.id }}/add-appointment/" method="POST">
+      <div class="form-group">
+        <label for="date_time">Date and Time : yyyy-mm-dd hh:mm am/pm </label>
+        <input id="date_time"
+               class="form-control"
+               name="date_time"
+               placeholder="yyyy-mm-dd hh:mm am/pm"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="services_needed">Services Needed:</label>
+        <textarea class="form-control"
+                  name="services_needed"
+                  id="services_needed"></textarea>
+      </div>
+      <button class="btn btn-primary">Add</button>
+    </form>
+  </div>
+
+</div>
+
+{% endblock %}
+<link rel="stylesheet" href="app.css">
