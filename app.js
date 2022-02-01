@@ -6,8 +6,9 @@ const bodyParser = require("body-parser");
 const routes = require("./routes");
 
 const app = express();
-const port = process.env.PORT || 3000;
-app.set("port", port);
+// const PORT = process.env.PORT || 3000;
+// app.set("PORT", PORT);
+
 
 // Parse body for urlencoded (non-JSON) data
 app.use(bodyParser.urlencoded({ extended: false }));
