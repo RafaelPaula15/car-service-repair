@@ -1,7 +1,8 @@
 ## Car-service-repair
 
 
-This is the link to open and view this application already deployed --->
+This is the link to open and view this application already deployed.
+ https://car-service-repair.herokuapp.com/
 
 
 To get this application running, do the following in the Terminal:
