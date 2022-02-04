@@ -2,7 +2,8 @@
 
 const pg = require("pg");
 
-const db = new pg.Client("postgresql:///car-services");
+const db = new pg.Client(process.env['DATABASE_URL']);
+// const db = new pg.Client("postgresql:///car-services");
 
 
 
